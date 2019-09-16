@@ -171,12 +171,15 @@ window.onload = function () {
       result();
       comments();
       canvas();
+      if(lives == 0){
+        restart()
+      }
     }
   
     play();
   
     // Reset
-    document.getElementById('reset').onclick = function () {
+    document.getElementById('reset').onclick = function restart() {
       correct.parentNode.removeChild(correct);
       letters.parentNode.removeChild(letters);
       context.clearRect(0, 0, 400, 400);
