@@ -13,7 +13,7 @@ window.onload = function () {
   
     let showLives = document.getElementById("tries");
   
-    // creation liste alphabet
+    // Buttons creation
     let buttons = function () {
       myButtons = document.getElementById('buttons');
       letters = document.createElement('ul');
@@ -29,7 +29,6 @@ window.onload = function () {
       }
     }
   
-    // Creation tableau des essai
      result = function () {
       wordHolder = document.getElementById('word_guess');
       correct = document.createElement('ul');
@@ -51,7 +50,7 @@ window.onload = function () {
       }
     }
   
-    // Montrer les essais
+    // Show guesses
     comments = function () {
       showLives.innerHTML = "Il te reste " + lives + " vies";
       if (lives < 1) {
@@ -70,7 +69,7 @@ window.onload = function () {
     }
   
   
-    // Pendu en lui même
+    // Canvas display
     canvas =  function(){
   
       myStickman = document.getElementById("canvas");
@@ -132,7 +131,7 @@ window.onload = function () {
   
     drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
   
-    // Actions Onclick
+    // Onclick
     check = function () {
       list.onclick = function () {
         let essai = (this.innerHTML);
@@ -156,7 +155,7 @@ window.onload = function () {
     }
   
   
-    // Jeu
+    // Game
     play = function () {
       words = ['javascript', 'formation', 'hangman', 'misere', 'ecf','suicide','canvas', 'programmation', 'coding','symfony','vendetta', 'migraine', 'angular', 'espoir','inspiration', 'pokemon']
       let randNum = Math.floor(Math.random() * words.length);
@@ -171,8 +170,8 @@ window.onload = function () {
       result();
       comments();
       canvas();
-      if(lives == 0){
-        restart()
+      if(lives === 0){
+        return onload();
       }
     }
   
